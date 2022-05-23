@@ -1,0 +1,65 @@
+{
+    "id": "Authentication",
+    "initial": "Start",
+    "states": {
+      "Start": {
+        
+        "on": {
+          "User clicks login with anchor": {
+            "target": "Login"
+          },
+          "User clicks register": {
+            "target": "Register"
+          }
+        }
+      },
+      "Register": {
+        "entry": "Begin challenge sync",
+        
+        "on": {
+          "User clicks create with this device": {
+            "target": "Captcha"
+          }
+        }
+      },
+      "Captcha": {
+        "on": {
+          "Things happen": {
+            "target": "Recovery phrase"
+          },
+          "User doesn't wants things to happend": {
+            "target": "End"
+          }
+        }
+      },
+      "Login": {
+        "on": {
+          "User clicks back": {
+            "target": "Start"
+          },
+          "Things happen": {
+            "target": "Things"
+          }
+        }
+      },
+      "Recovery phrase": {
+        "on": {
+          "Things happen": {
+            "target": "End"
+          }
+        }
+      },
+      "End": {
+        "entry": "Issue delegate and close flow",
+        "type": "final"
+      },
+      "Things": {
+        "on": {
+          "Things happen": {
+            "target": "End"
+          }
+        }
+      },
+      "Create or use identity with a phone": {}
+    }
+  }
