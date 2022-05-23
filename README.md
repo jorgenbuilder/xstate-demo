@@ -7,3 +7,10 @@ We render a different screen for each state, and push events to the state machin
 
 ![demo](demo.png)
 [View demo](https://xstate-demo-ee7hxrk6n-sagacards.vercel.app/)
+
+# Local Dev
+
+```
+npm i
+npm run dev
+```
